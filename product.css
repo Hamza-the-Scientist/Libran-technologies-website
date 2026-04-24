@@ -1,0 +1,237 @@
+:root {
+    --gold: #D4AF37;
+    --black: #050505;
+    --dark-grey: #111111;
+    --glass: rgba(255, 255, 255, 0.03);
+    --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background-color: var(--black);
+    /* --- MODERN NEON BACKGROUND --- */
+    /* Using a high-quality abstract dark mesh/tech background */
+    background-image:
+        linear-gradient(to bottom, rgb(76, 76, 76), rgb(0, 0, 0));
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+}
+
+/* --- ADDING A DYNAMIC GLOW LAYER --- */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* This creates the "Neon" corner glows */
+    background:
+        radial-gradient(circle at 10% 10%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+        radial-gradient(circle at 90% 90%, rgba(212, 175, 55, 0.05) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: -1;
+}
+
+/* --- NAVBAR --- */
+
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    padding: 20px 8%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 1000;
+    background: rgb(255, 255, 255);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+}
+
+.logo {
+    font-size: 1.3rem;
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: var(--gold);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.cam-name {
+    margin-left: 20px;
+    color: black;
+}
+
+.pvt {
+    font-size: 15px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 25px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: rgb(0, 0, 0);
+    font-size: 0.9rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    /* letter-spacing: 1px; */
+    transition: var(--transition);
+}
+
+.nav-links a:hover {
+    color: var(--gold);
+    text-shadow: 0 0 10px var(--gold);
+}
+
+:root {
+            --primary-color: #ffffff;
+            --accent-color: #0984e3;
+            --text-gray: #cdcdcd;
+            --bg-soft: #000000;
+        }
+
+        body {
+            margin: 0;
+            /* font-family: 'Inter', -apple-system, sans-serif; */
+            background-color: var(--bg-soft);
+            color: var(--primary-color);
+            line-height: 1.6;
+        }
+
+        /* --- 1. TOP BANNER IMAGE --- */
+        .page-banner {
+            margin-top: 100px;
+            width: 100%;
+            height: 350px;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .page-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .banner-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.406);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .banner-overlay h1 {
+            color: white;
+            font-size: 3rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin: 0;
+        }
+
+        /* --- 2. PRODUCT SECTION CONTAINER --- */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 60px 20px;
+        }
+
+        /* --- 3. THE PRODUCT ROW (Reusable) --- */
+        .product-row {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 50px;
+            margin-bottom: 100px; /* Space between different products */
+        }
+
+        /* Alternate product layout (Optional: flips image/text) */
+        .product-row:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        /* Left Side: Description */
+        .product-description {
+            flex: 1;
+        }
+
+        .product-description h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+
+        .product-description p {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 30px;
+            text-align: justify; /* As per your previous preference */
+        }
+
+        .btn-shop {
+            display: inline-block;
+            padding: 12px 35px;
+            background-color: var(--accent-color);
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            font-weight: 600;
+            transition: 0.3s;
+        }
+
+        .btn-shop:hover {
+            background-color: #0773c5;
+            transform: translateY(-2px);
+        }
+
+        /* Right Side: Big Image */
+        .product-image {
+            flex: 1;
+            position: relative;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            transition: transform 0.5s ease;
+        }
+
+        .product-image:hover img {
+            transform: scale(1.02);
+        }
+
+        /* --- 4. RESPONSIVE DESIGN --- */
+        @media (max-width: 900px) {
+            .product-row, .product-row:nth-child(even) {
+                flex-direction: column-reverse; /* Image on top of text for mobile */
+                text-align: center;
+            }
+
+            .page-banner { height: 250px; }
+            .banner-overlay h1 { font-size: 2rem; }
+            
+            .product-description h2 { font-size: 2rem; }
+            
+            .product-image { width: 100%; }
+        }

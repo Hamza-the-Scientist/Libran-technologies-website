@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Premium Digital Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+
+    <nav>
+        <div class="logo"><img src="logo.png" width="60px" alt=""><span class="cam-name">Libran Technologies <div
+                    class="pvt">(PVT) limited</div> </span></div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="team.html">Team</a></li>
+            <li><a href="product.html">Product</a></li>
+            <li><a href="patent.html">Publication and patents</a></li>
+            <li><a href="#about">Commercialization and Technology transfer </a></li>
+            <li><a href="#about">News & Events</a></li>
+            <li><a href="#contact">Contact us</a></li>
+        </ul>
+    </nav>
+
+    // slider
+
+    
+    
+    <section class="slider-section">
+        <div class="slider-wrapper">
+            <div class="slider-container" id="slider">
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+                        alt="Landscape 1">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
+                    alt="Landscape 2">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
+                    alt="Landscape 3">
+                </div>
+                <div class="slide">
+                    <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
+                    alt="Landscape 4">
+                </div>
+            </div>
+        </div>
+        <!-- 
+            <div class="content-footer">
+                <h1>NEWS & EVENTS</h1>
+                <p>A seamless exploration of the world's most quiet places. This slider automatically transitions every two seconds to keep your journey moving.</p>
+        </div> -->
+    </section>
+    
+    <script>
+        const slider = document.getElementById('slider');
+        let isPaused = false;
+        
+        // Function to move to the next slide
+        function nextSlide() {
+            if (isPaused) return;
+
+            const slideWidth = slider.querySelector('.slide').clientWidth;
+            const gap = 20; // Must match --slide-gap in CSS
+            const totalWidth = slideWidth + gap;
+
+            // Check if we are at the end
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                // Return to start
+                slider.scrollTo({ left: 0, behavior: 'smooth' });
+            } else {
+                // Move forward
+                slider.scrollBy({ left: totalWidth, behavior: 'smooth' });
+            }
+        }
+        
+        // Initialize Auto Scroller (2000ms = 2 seconds)
+        let autoCycle = setInterval(nextSlide, 2000);
+
+        // Interaction Listeners: Pause when user interacts
+        slider.addEventListener('mouseenter', () => isPaused = true);
+        slider.addEventListener('mouseleave', () => isPaused = false);
+        slider.addEventListener('touchstart', () => isPaused = true);
+        slider.addEventListener('touchend', () => {
+            // Short delay after touch before resuming
+            setTimeout(() => { isPaused = false; }, 1000); // timer
+        });
+    </script>
+    </div>
+    
+    <section id="home" class="hero">
+        <h5></h5>
+        <h1>LIBRAN <span>TECHNOLOGIES</span> PVT.LTD</h1>
+        <a href="#projects" class="cta-btn">INNNOVATION ENGINEERED FOR TOMMORROW</a>
+    </section>
+    <div class="speration"></div>
+    
+    <div class="intro">
+        <!-- <span>WHO WE ARE</span> -->
+        <p>
+            Libran Technologies is an innovative and intellectual property development company dedicated to converting laboratory challenges into commercially valuable technological solutions. Built on a strong foundation of research, creativity, and strategic insight, the company focuses on generating patentable technologies with measurable laboratory impact. Libran Technologies operates on a forward-thinking model: independently identifying real laboratory challenges, designing practical solutions, transforming them into high-quality patents, and licensing these innovations to laboratory equipment companies seeking a competitive edge. Through this approach, the company bridges the gap
+        between industrial need and technological advancement.
+        </p>
+    </div>
+
+
+
+    <section id="projects" class="section">
+        <h2 class="section-title">PROJECTS</h2>
+        <div class="project-grid">
+            <a href="project-details-1.html" class="project-card">
+                <div class="project-img"><img width="800px" src="pic.png" alt=""></div>
+                <div class="project-info">
+                    <h3>Cyber Ledger App</h3>
+                    <p>Financial technology platform for next-gen assets.</p>
+                </div>
+            </a>
+            <a href="project-details-2.html" class="project-card">
+                <div class="project-img">IMAGE PLACEHOLDER (600x400)</div>
+                <div class="project-info">
+                    <h3>Aether UI Kit</h3>
+                    <p>A glassmorphic design system for enterprise dashboards.</p>
+                </div>
+            </a>
+        </div>
+    </section>
+
+    <section id="about" class="section">
+        <h2 class="section-title">ABOUT US</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <p>We are a boutique digital agency specialized in high-end full-stack development and UI/UX design. We
+                    don't just build websites; we craft digital identities.</p>
+                <p>With expertise in Node.js, React, and MongoDB, we bridge the gap between aesthetic beauty and
+                    technical performance.</p>
+            </div>
+            <div
+                style="border: 1px solid var(--gold); height: 300px; display: flex; align-items: center; justify-content: center; color: var(--gold); opacity: 0.5;">
+                [ BRAND VISUAL ]
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="section">
+        <h2 class="section-title">GET IN TOUCH</h2>
+        <div class="contact-container">
+            <form id="contactForm">
+                <input type="text" placeholder="Full Name" required>
+                <input type="email" placeholder="Email Address" required>
+                <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
+                <button type="submit" class="cta-btn">SEND MESSAGE</button>
+            </form>
+        </div>
+    </section>
+
+    <footer>
+        <p>&copy; 2026 LUXE STUDIO. All Rights Reserved. Built with Gold & Obsidian.</p>
+    </footer>
+
+    <script>
+        // Simple Scroll Animation Effect
+        window.addEventListener('scroll', () => {
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                const sectionTop = section.getBoundingClientRect().top;
+                if (sectionTop < window.innerHeight - 100) {
+                    section.style.opacity = '1';
+                    section.style.transform = 'translateY(0)';
+                }
+            });
+        });
+
+        // Initialize sections
+        document.querySelectorAll('.section').forEach(s => {
+            s.style.opacity = '0';
+            s.style.transform = 'translateY(30px)';
+            s.style.transition = 'all 0.8s ease-out';
+        });
+    </script>
+</body>
+
+</html>
