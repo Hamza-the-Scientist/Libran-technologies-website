@@ -12,7 +12,7 @@
 <body>
 
     <nav>
-        <div class="logo"><img src="pics/Logo.png" width="60px" alt=""><span class="cam-name">Libran Technologies <div
+        <div class="logo"><img src="/pics/Logo.png" width="60px" alt=""><span class="cam-name">Libran Technologies <div
                     class="pvt">(PVT) limited</div> </span></div>
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
@@ -21,32 +21,32 @@
             <li><a href="patent.html">Publication and patents</a></li>
             <li><a href="#about">Commercialization and Technology transfer </a></li>
             <li><a href="#about">News & Events</a></li>
-            <li><a href="#contact">Contact us</a></li>
+            <li><a href="contact.html">Contact us</a></li>
         </ul>
     </nav>
 
     // slider
 
-    
-    
+
+
     <section class="slider-section">
         <div class="slider-wrapper">
             <div class="slider-container" id="slider">
                 <div class="slide">
-                    <img src="https://images.unsplash.com/photo-1470770841072-f978cf4d019e?auto=format&fit=crop&w=1200&q=80"
+                    <img src="pics/image.jpeg"
                         alt="Landscape 1">
                 </div>
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
-                    alt="Landscape 2">
+                        alt="Landscape 2">
                 </div>
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=1200&q=80"
-                    alt="Landscape 3">
+                        alt="Landscape 3">
                 </div>
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?auto=format&fit=crop&w=1200&q=80"
-                    alt="Landscape 4">
+                        alt="Landscape 4">
                 </div>
             </div>
         </div>
@@ -56,11 +56,11 @@
                 <p>A seamless exploration of the world's most quiet places. This slider automatically transitions every two seconds to keep your journey moving.</p>
         </div> -->
     </section>
-    
+
     <script>
         const slider = document.getElementById('slider');
         let isPaused = false;
-        
+
         // Function to move to the next slide
         function nextSlide() {
             if (isPaused) return;
@@ -78,7 +78,7 @@
                 slider.scrollBy({ left: totalWidth, behavior: 'smooth' });
             }
         }
-        
+
         // Initialize Auto Scroller (2000ms = 2 seconds)
         let autoCycle = setInterval(nextSlide, 2000);
 
@@ -92,25 +92,50 @@
         });
     </script>
     </div>
-    
+
     <section id="home" class="hero">
         <h5></h5>
         <h1>LIBRAN <span>TECHNOLOGIES</span> PVT.LTD</h1>
         <a href="#projects" class="cta-btn">INNNOVATION ENGINEERED FOR TOMMORROW</a>
+        <div class="speration"></div>
+
+        <div class="intro">
+            <!-- <span>WHO WE ARE</span> -->
+            <p>
+                Libran Technologies is an innovative and intellectual property development company dedicated to
+                converting
+                laboratory challenges into commercially valuable technological solutions. Built on a strong foundation
+                of
+                research, creativity, and strategic insight, the company focuses on generating patentable technologies
+                with
+                measurable laboratory impact. Libran Technologies operates on a forward-thinking model: independently
+                identifying real laboratory challenges, designing practical solutions, transforming them into
+                high-quality
+                patents, and licensing these innovations to laboratory equipment companies seeking a competitive edge.
+                Through this approach, the company bridges the gap
+                between industrial need and technological advancement.
+            </p>
+        </div>
     </section>
-    <div class="speration"></div>
-    
-    <div class="intro">
-        <!-- <span>WHO WE ARE</span> -->
-        <p>
-            Libran Technologies is an innovative and intellectual property development company dedicated to converting laboratory challenges into commercially valuable technological solutions. Built on a strong foundation of research, creativity, and strategic insight, the company focuses on generating patentable technologies with measurable laboratory impact. Libran Technologies operates on a forward-thinking model: independently identifying real laboratory challenges, designing practical solutions, transforming them into high-quality patents, and licensing these innovations to laboratory equipment companies seeking a competitive edge. Through this approach, the company bridges the gap
-        between industrial need and technological advancement.
-        </p>
-    </div>
+
+    <section class="mv-container">
+        <div class="mv-item mission">
+            <h2>Mission</h2>
+            <p>The mission of Libran Technologies is to identify critical laboratory challenges, develop novel and
+                patentable technological solutions, protect these innovations through strong intellectual property, and
+                transfer them to laboratory technology companies and research institutions worldwide.</p>
+        </div>
+
+        <div class="mv-item vision">
+            <h2>Vision</h2>
+            <p>To become a globally recognized laboratory innovation company that transforms scientific challenges into
+                breakthrough technologies, advancing research efficiency, safety, and discovery across laboratories
+                worldwide.</p>
+        </div>
+    </section>
 
 
-
-    <section id="projects" class="section">
+    <!-- <section id="projects" class="section">
         <h2 class="section-title">PROJECTS</h2>
         <div class="project-grid">
             <a href="project-details-1.html" class="project-card">
@@ -128,38 +153,44 @@
                 </div>
             </a>
         </div>
-    </section>
+    </section> -->
 
     <section id="about" class="section">
-        <h2 class="section-title">ABOUT US</h2>
+        <h2 class="section-title">INNOVATION CYCLE</h2>
         <div class="about-content">
             <div class="about-text">
-                <p>We are a boutique digital agency specialized in high-end full-stack development and UI/UX design. We
-                    don't just build websites; we craft digital identities.</p>
-                <p>With expertise in Node.js, React, and MongoDB, we bridge the gap between aesthetic beauty and
-                    technical performance.</p>
+                <p>
+                    At Libran Technologies, we follow a structured, research-driven approach to transform laboratory
+                    challenges into globally impactful innovations.
+                </p>
+                <p>
+                    <b> 1. Identify Challenges</b>
+                    We begin by recognizing real problems within laboratories.
+                    Our team actively explores research environments to uncover inefficiencies, limitations, and unmet
+                    needs that require innovative solutions.<br><br>
+                    <b>2. Develop Technologies</b>
+                    Once a challenge is identified, we design and develop novel, patentable technologies.
+                    Our focus is on creating unique, practical, and scientifically robust solutions that address
+                    real-world laboratory problems.<br><br>
+                    <b>3. Secure Patents</b>
+                    We protect our innovations through strong intellectual property strategies.
+                    Each solution is carefully documented and filed to ensure legal protection and long-term value. <br><br>
+                    <b>4. Commercialize</b>
+                    Finally, we transfer our technologies to laboratory equipment companies and research institutions.
+                    Through licensing and partnerships, we ensure our innovations reach the global scientific community.
+                </p>
+
             </div>
             <div
-                style="border: 1px solid var(--gold); height: 300px; display: flex; align-items: center; justify-content: center; color: var(--gold); opacity: 0.5;">
-                [ BRAND VISUAL ]
+                style=" height: 510px; display: flex; align-items: center; justify-content: center; color: var(--gold); opacity: 1;">
+                <img width="500px" src="pics/innovation_cycle.png" alt="CYCLE">
             </div>
         </div>
     </section>
 
-    <section id="contact" class="section">
-        <h2 class="section-title">GET IN TOUCH</h2>
-        <div class="contact-container">
-            <form id="contactForm">
-                <input type="text" placeholder="Full Name" required>
-                <input type="email" placeholder="Email Address" required>
-                <textarea rows="5" placeholder="Tell us about your project..." required></textarea>
-                <button type="submit" class="cta-btn">SEND MESSAGE</button>
-            </form>
-        </div>
-    </section>
-
+   
     <footer>
-        <p>&copy; 2026 LUXE STUDIO. All Rights Reserved. Built with Gold & Obsidian.</p>
+        <p>&copy; 2026 LIBRAN TECHNOLOGIES (PVT) LTD. All Rights Reserved.</p>
     </footer>
 
     <script>

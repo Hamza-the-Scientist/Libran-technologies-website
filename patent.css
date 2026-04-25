@@ -109,7 +109,7 @@ nav {
 
 body {
     margin: 0;
-    font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+    /* font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; */
     background-color: var(--bg-light);
     color: var(--primary-dark);
     line-height: 1.6;

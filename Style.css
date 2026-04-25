@@ -202,7 +202,7 @@ nav {
     }
 }
 
-.speration{
+.speration {
     /* margin-top: 1000px; */
     margin: 10px auto 0;
     width: 50%;
@@ -235,7 +235,7 @@ nav {
 
 /* --- HERO SECTION --- */
 .hero {
-    height: 36vh;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -319,9 +319,63 @@ nav {
     box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
 }
 
-/* --- PROJECTS SECTION --- */
+/* vision and mission  */
+
+/* Container setup */
+.mv-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    text-align: center;
+    padding: 60px 0px 0px 0px;
+    max-width: 1200px;
+    margin: 0 auto;
+    /* Centers the whole section on the page */
+}
+
+/* Individual boxes */
+.mv-item {
+    flex: 1;
+    padding: 40px;
+}
+
+/* The Separator Logic */
+.mission {
+    border-right: 1px solid var(--gold);
+    /* Vertical line on Desktop */
+}
+
+/* Typography basics */
+.mv-item h2 {
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+    color: #ffffff;
+}
+
+.mv-item p {
+    line-height: 1.6;
+    color: #cdcdcd;
+}
+
+/* Responsive Design for Mobile */
+@media (max-width: 768px) {
+    .mv-container {
+        flex-direction: column;
+        /* Stacks Mission on top of Vision */
+    }
+
+    .mission {
+        border-right: none;
+        border-bottom: 2px solid #ccc;
+        /* Horizontal line on Mobile */
+    }
+}
+
+/* --- PROJECTS SECTION ---  */
 .section {
-    padding: 100px 10%;
+    padding: 60px 10%;
 }
 
 .section-title {
@@ -342,7 +396,7 @@ nav {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    /* 2 cards in a row */
+    /* //2 cards in a row  */
     gap: 30px;
 }
 
@@ -393,8 +447,9 @@ nav {
 
 .about-text p {
     margin-bottom: 20px;
-    color: #aaa;
+    color: #e1e1e1;
 }
+
 
 /* --- CONTACT US --- */
 .contact-container {
@@ -428,7 +483,7 @@ footer {
     padding: 50px 10%;
     text-align: center;
     border-top: 1px solid rgba(212, 175, 55, 0.1);
-    color: #555;
+    color: #a2a0a0;
     font-size: 0.8rem;
 }
 
@@ -449,4 +504,59 @@ footer {
     }
 
     /* Mobile Menu would go here */
+}
+
+ /* media query nav bar  */
+/* 1. Desktop: Hide the bars by default */
+.menu-toggle {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+}
+
+/* 2. Styling the individual bars */
+.bar {
+    width: 25px;
+    height: 3px;
+    background-color: #333; /* MAKE SURE THIS CONTRASTS WITH YOUR NAV COLOR */
+    margin: 4px 0;
+    display: block;
+    transition: 0.3s;
+}
+
+/* 3. Mobile: Show the bars when the screen is small */
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+}
+
+.bar{
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    background-color: #333; /* Change to your theme color */
+    transition: all 0.3s ease-in-out;
+}
+
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block; /* This makes it appear */
+        z-index: 999;   /* Makes sure it sits on top of everything */
+    }
+
+    .nav-links {
+        display: none; /* Hide the links until 'active' class is added */
+        position: absolute;
+        right: 0;
+        top: 70px;
+        background: #fff;
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .nav-links.active {
+        display: flex; /* Shows the links when clicked */
+    }
 }
