@@ -124,6 +124,16 @@ nav {
     transition: all 0.3s ease;
 }
 
+@media (max-width: 600px) {
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .pvt {
+        font-size: 0.6rem;
+    }
+}
+
 /* --- MEDIA QUERY FOR MOBILE (Responsive) --- */
 @media (max-width: 1024px) {
     nav {
