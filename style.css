@@ -286,7 +286,7 @@ nav {
     min-height: 40vh;
     /* Increased to allow room for content */
     display: flex;
-    margin-top: 40px;
+    margin-top: 80px;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -578,6 +578,149 @@ nav {
 
     .section-title {
         font-size: 1.5rem;
+    }
+}
+
+
+/* foorter  */
+
+/* Footer Base Styles */
+.site-footer {
+    background-color: #1a1a1a;
+    color: #ffffff;
+    padding: 40px 20px 20px;
+    font-family: sans-serif;
+}
+
+.footer-container {
+    max-width: 1100px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    /* Spaced out on desktop */
+    align-items: center;
+    flex-wrap: wrap;
+    /* Allows wrapping on small screens */
+    gap: 20px;
+}
+
+/* Info and Links */
+.footer-info p {
+    text-align: justify;
+    margin: 5px 0;
+    font-size: 0.8rem;
+    color: #ccc;
+}
+
+.footer-info a {
+    color: #00aaff;
+    text-decoration: none;
+}
+
+.footer-socials {
+    display: flex;
+    gap: 15px;
+}
+
+.social-link {
+    color: #fff;
+    text-decoration: none;
+    padding: 8px 12px;
+    border: 1px solid #444;
+    border-radius: 5px;
+    transition: background 0.3s, border-color 0.3s;
+}
+
+.social-link:hover {
+    background: #333;
+    border-color: #00aaff;
+}
+
+/* Copyright Bar */
+.footer-bottom {
+    text-align: center;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px solid #333;
+    font-size: 0.8rem;
+    color: #777;
+}
+
+
+/* our partner */
+.partners-section {
+  padding: 60px 20px;
+  background-color: #191919;
+  text-align: center;
+}
+
+.partners-grid{
+    display: flex;
+    justify-content: center;
+}
+
+.partners-title {
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.partners-grid {
+    margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  /* This creates 5 columns by default */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
+  align-items: center;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.partner-logo img:hover {
+  filter: grayscale(0%); /* Restores color on hover */
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Responsiveness */
+
+/* Tablets: 3 columns */
+@media (max-width: 992px) {
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 600px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .partners-title {
+    font-size: 1.2rem;
+  }
+}
+
+/* Responsiveness: Stack elements on screens smaller than 600px */
+@media (max-width: 600px) {
+    .footer-container {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .footer-socials {
+        justify-content: center;
     }
 }
 
