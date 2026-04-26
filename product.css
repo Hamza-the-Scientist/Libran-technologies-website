@@ -124,6 +124,16 @@ nav {
     transition: all 0.3s ease;
 }
 
+@media (max-width: 600px) {
+    .logo {
+        font-size: 0.9rem;
+    }
+
+    .pvt {
+        font-size: 0.6rem;
+    }
+}
+
 /* --- MEDIA QUERY FOR MOBILE (Responsive) --- */
 @media (max-width: 1024px) {
     nav {
@@ -183,161 +193,396 @@ nav {
 }
 
 
+/* slider start here */
+
+
+
 :root {
-    --primary-color: #ffffff;
-    --accent-color: #0984e3;
-    --text-gray: #cdcdcd;
-    --bg-soft: #000000;
+    --side-peek: 0;
+    /* Changed to 0 to keep width 100% easily */
+    --slide-gap: 20px;
+    --slider-height: 50vh;
+    /* This makes it 50% of the screen height */
 }
 
-body {
-    margin: 0;
-    /* font-family: 'Inter', -apple-system, sans-serif; */
-    background-color: var(--bg-soft);
-    color: var(--primary-color);
-    line-height: 1.6;
-}
-
-/* --- 1. TOP BANNER IMAGE --- */
-.page-banner {
-    margin-top: 70px;
+.slider-section {
+    padding: 0px 2%;
     width: 100%;
-    height: 250px;
-    overflow: hidden;
+    margin: auto;
     position: relative;
+    /* Ensures it stays in flow */
+    display: block;
+    clear: both;
 }
 
-.page-banner img {
+.slider-wrapper {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    /* Keeps everything tidy */
+}
+
+/* The Scrollable Track */
+.slider-container {
+    display: flex;
+    gap: var(--slide-gap);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+}
+
+.slider-container::-webkit-scrollbar {
+    display: none;
+}
+
+/* Individual Slides */
+.slide {
+    flex: 0 0 100%;
+    width: 100%;
+    height: var(--slider-height);
+    /* Applied the 50% height here */
+    scroll-snap-align: center;
+    border-radius: 24px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.4s ease;
+}
+
+.slide img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    /* Keeps image aspect ratio without stretching */
+    display: block;
 }
 
-.banner-overlay {
-    position: absolute;
-    top: 0;
-    left: 0;
+/* Responsive Breakpoints */
+@media (max-width: 1024px) {
+    :root {
+        --slider-height: 50vh;
+        /* Smaller height for tablets */
+    }
+}
+
+@media (max-width: 768px) {
+    :root {
+        --slider-height: 40vh;
+        /* Smaller height for mobile phones */
+    }
+
+    .slide {
+        border-radius: 12px;
+        /* Slightly smaller corners on mobile */
+    }
+}
+
+/* hero section css */
+
+
+/* --- HERO SECTION --- */
+.hero {
+    min-height: 40vh;
+    /* Increased to allow room for content */
+    display: flex;
+    margin-top: 80px;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-content {
+    max-width: 1200px;
+    z-index: 2;
+    margin-bottom: 50px;
+}
+
+.hero h1 {
+    /* clamp(min, preferred, max) handles responsiveness automatically */
+    font-size: clamp(2.2rem, 10vw, 3rem);
+    font-weight: 900;
+    line-height: 1.1;
+    margin-bottom: 20px;
+    color: white;
+}
+
+.hero h1 span {
+    color: transparent;
+    -webkit-text-stroke: 1px var(--gold, #d4af37);
+    display: inline-block;
+}
+
+.cta-btn {
+    padding: 18px 35px;
+    border: 1px solid var(--gold, #d4af37);
+    background: transparent;
+    color: var(--gold, #d4af37);
+    font-weight: 700;
+    letter-spacing: 1px;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.6rem;
+}
+
+.cta-btn:hover {
+    background: var(--gold, #d4af37);
+    color: black;
+    box-shadow: 0 0 30px rgba(212, 175, 55, 0.4);
+    transform: translateY(-3px);
+}
+
+/* --- INTRO SECTION --- */
+.intro {
     width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.406);
+    max-width: 1000px;
+    margin: 0 auto;
+    z-index: 2;
+}
+
+.intro p {
+    font-size: clamp(0.5rem, 2vw, 1rem);
+    padding: 10px 30px;
+    line-height: 1.5;
+    color: rgba(255, 255, 255, 0.8);
+    text-align: justify;
+    /* Changed from justify for better readability on web */
+}
+
+/* --- RESPONSIVE FIXES --- */
+@media (max-width: 768px) {
+    .hero {
+        min-height: 40vh;
+        /* Full screen on mobile */
+    }
+
+    .hero h1 {
+        font-size: 2rem;
+    }
+
+    .hero h1 span {
+        -webkit-text-stroke: 0.5px var(--gold, #d4af37);
+        /* Thinner stroke for mobile */
+        color: var(--gold, #d4af37);
+        /* Add slight color so it's readable */
+    }
+
+    .cta-btn {
+        width: 70%;
+        padding: 12px 80px;
+        font-size: 0.6rem;
+    }
+
+}
+
+/* mission and vision  */
+
+.mv-section {
+    padding: 50px 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.mv-container {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    justify-content: center;
+    max-width: 1100px;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.01);
+    /* Subtle glass effect */
+    backdrop-filter: blur(5px);
+    border: 1px solid rgba(212, 175, 55, 0.1);
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+/* Individual boxes */
+.mv-item {
+    flex: 1;
+    padding: 50px 40px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Vertical Divider for Desktop */
+.mission {
+    border-right: 1px solid rgba(212, 175, 55, 0.2);
+}
+
+/* Typography & Accents */
+.mv-item h2 {
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    color: #ffffff;
+    font-size: 1.4rem;
+}
+
+/* Small gold line under headings */
+.line-accent {
+    width: 50px;
+    height: 2px;
+    background: var(--gold, #d4af37);
+    margin-bottom: 25px;
+}
+
+.mv-item p {
+    line-height: 1.6;
+    color: #cdcdcd;
+    font-size: 0.8rem;
+    max-width: 450px;
+    /* Prevents lines from being too long to read */
+}
+
+/* --- RESPONSIVE DESIGN --- */
+
+@media (max-width: 992px) {
+    .mv-item {
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 768px) {
+    .mv-container {
+        flex-direction: column;
+        background: transparent;
+        /* Remove container background on mobile for airier feel */
+        border: none;
+    }
+
+    .mv-item {
+        padding: 40px 10px;
+        background: rgba(255, 255, 255, 0.03);
+        margin-bottom: 20px;
+        border-radius: 20px;
+        border: 1px solid rgba(212, 175, 55, 0.1);
+    }
+
+    .mission {
+        border-right: none;
+        /* Remove vertical line */
+    }
+
+    .mv-item h2 {
+        font-size: 1.5rem;
+    }
+}
+
+
+/* innovation cycle css */
+
+
+/* --- SHARED SECTION STYLES --- */
+.section {
+    padding: 40px 10%;
+    max-width: 1400px;
+    margin: 0 auto;
+}
+
+.section-title {
+    font-size: 1.6rem;
+    margin-bottom: 50px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    color: white;
+    letter-spacing: 2px;
+}
+
+.section-title::after {
+    content: "";
+    height: 1px;
+    flex-grow: 1;
+    background: rgba(212, 175, 55, 0.3);
+}
+
+/* --- ABOUT / INNOVATION CYCLE --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1.2fr 0.8fr;
+    /* Text gets slightly more space */
+    gap: 60px;
+    align-items: center;
+}
+
+.about-text .step {
+    margin-bottom: 25px;
+}
+
+.about-text b {
+    display: block;
+    color: var(--gold, #d4af37);
+    font-size: 1rem;
+    margin-bottom: 5px;
+    text-transform: uppercase;
+}
+
+.about-text p {
+    line-height: 1.6;
+    color: #e1e1e1;
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+}
+
+.about-image {
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.banner-overlay h1 {
-    color: white;
-    font-size: 2rem;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-    margin: 0;
-}
-
-/* --- 2. PRODUCT SECTION CONTAINER --- */
-.container {
-    max-width: 70vw;
-    margin: 0 auto;
-    padding: 60px 20px;
-}
-
-/* --- 3. THE PRODUCT ROW (Reusable) --- */
-.product-row {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 50px;
-    margin-bottom: 100px;
-    /* Space between different products */
-}
-
-/* Alternate product layout (Optional: flips image/text) */
-.product-row:nth-child(even) {
-    flex-direction: row-reverse;
-}
-
-/* Left Side: Description */
-.product-description {
-    flex: 1;
-}
-
-.product-description h2 {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: var(--primary-color);
-}
-
-.product-description p {
-    font-size: .8rem;
-    color: var(--text-gray);
-    margin-bottom: 30px;
-    text-align: justify;
-    /* As per your previous preference */
-}
-
-.btn-shop {
-    display: inline-block;
-    padding: 12px 35px;
-    background-color: var(--accent-color);
-    color: white;
-    text-decoration: none;
-    border-radius: 5px;
-    font-weight: 600;
-    transition: 0.3s;
-    font-size: .6rem;
-}
-
-.btn-shop:hover {
-    background-color: #0773c5;
-    transform: translateY(-2px);
-}
-
-/* Right Side: Big Image */
-.product-image {
-    flex: 1;
-    position: relative;
-}
-
-.product-image img {
+.about-image img {
     width: 100%;
-    border-radius: 20px;
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
-    transition: transform 0.5s ease;
+    max-width: 500px;
+    height: auto;
+    filter: drop-shadow(0 0 20px rgba(212, 175, 55, 0.1));
+    transition: transform 0.3s ease;
 }
 
-.product-image:hover img {
+.about-image img:hover {
     transform: scale(1.02);
 }
 
-/* --- 4. RESPONSIVE DESIGN --- */
-@media (max-width: 900px) {
+/* --- RESPONSIVE DESIGN --- */
 
-    .product-row,
-    .product-row:nth-child(even) {
-        flex-direction: column-reverse;
-        /* Image on top of text for mobile */
-        text-align: center;
+@media (max-width: 1024px) {
+    .about-content {
+        grid-template-columns: 1fr;
+        /* Stack vertically on tablets */
+        gap: 40px;
     }
 
-    .page-banner {
-        height: 250px;
+    .about-image {
+        order: -1;
+        /* Move image above text on mobile for better flow */
     }
 
-    .banner-overlay h1 {
-        font-size: 2rem;
+    .about-image img {
+        max-width: 400px;
+        /* Smaller image on mobile */
+    }
+}
+
+@media (max-width: 768px) {
+    .section {
+        padding: 60px 5%;
     }
 
-    .product-description h2 {
-        font-size: 2rem;
-    }
-
-    .product-image {
-        width: 100%;
+    .section-title {
+        font-size: 1.5rem;
     }
 }
 
 
-/* footer */
-
+/* foorter  */
 
 /* Footer Base Styles */
 .site-footer {
@@ -377,10 +622,6 @@ body {
     gap: 15px;
 }
 
-.footer-socials a{
-    font-size: 8px;
-}
-
 .social-link {
     color: #fff;
     text-decoration: none;
@@ -405,6 +646,72 @@ body {
     color: #777;
 }
 
+
+/* our partner */
+.partners-section {
+  padding: 60px 20px;
+  background-color: #191919;
+  text-align: center;
+}
+
+.partners-grid{
+    display: flex;
+    justify-content: center;
+}
+
+.partners-title {
+  font-size: 1.5rem;
+  color: #e6e6e6;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.partners-grid {
+    margin: auto;
+  max-width: 1100px;
+  margin: 0 auto;
+  display: grid;
+  /* This creates 5 columns by default */
+  grid-template-columns: repeat(3, 1fr); 
+  gap: 30px;
+  align-items: center;
+}
+
+.partner-logo img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.6;
+  transition: all 0.3s ease;
+}
+
+.partner-logo img:hover {
+  filter: grayscale(0%); /* Restores color on hover */
+  opacity: 1;
+  transform: scale(1.05);
+}
+
+/* Responsiveness */
+
+/* Tablets: 3 columns */
+@media (max-width: 992px) {
+  .partners-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Mobile: 2 columns */
+@media (max-width: 600px) {
+  .partners-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .partners-title {
+    font-size: 1.2rem;
+  }
+}
+
 /* Responsiveness: Stack elements on screens smaller than 600px */
 @media (max-width: 600px) {
     .footer-container {
@@ -415,4 +722,14 @@ body {
     .footer-socials {
         justify-content: center;
     }
+}
+
+
+/* --- FOOTER --- */
+footer {
+    padding: 20px 10%;
+    text-align: center;
+    border-top: 1px solid rgba(212, 175, 55, 0.2);
+    color: #a2a0a0;
+    font-size: 0.5rem;
 }
