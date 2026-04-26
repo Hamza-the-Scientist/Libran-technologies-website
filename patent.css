@@ -49,7 +49,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 8%;
+    padding: 10px 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +60,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--gold);
@@ -75,7 +75,7 @@ nav {
 }
 
 .pvt {
-    font-size: 15px;
+    font-size: 0.7rem;
 }
 
 .nav-links {
@@ -87,7 +87,7 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
     /* letter-spacing: 1px; */
@@ -97,6 +97,89 @@ nav {
 .nav-links a:hover {
     color: var(--gold);
     text-shadow: 0 0 10px var(--gold);
+}
+
+/* --- EXISTING STYLES REMAIN SAME UNTIL HERE --- */
+
+/* Hide the checkbox */
+#click {
+    display: none;
+}
+
+/* Styles for the Hamburger Icon */
+.menu-btn {
+    display: none;
+    /* Hidden on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERY FOR MOBILE (Responsive) --- */
+@media (max-width: 1024px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    .menu-btn {
+        display: flex;
+        /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        /* Adjust based on nav height */
+        left: -100%;
+        /* Hide off-screen by default */
+        background: white;
+        height: calc(100vh - 80px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* SHOW MENU WHEN CHECKBOX IS CHECKED */
+    #click:checked~.nav-links {
+        left: 0;
+    }
+
+    /* Transform hamburger to 'X' when clicked */
+    #click:checked~.menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #click:checked~.menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #click:checked~.menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
 }
 
 
@@ -117,9 +200,9 @@ body {
 
 /* --- 1. TOP BANNER --- */
 .hero-banner {
-    margin-top: 100px;
+    margin-top: 80px;
     width: 100%;
-    height: 300px;
+    height: 250px;
     background: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
         url('https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=1600&q=80');
     background-size: cover;
@@ -132,7 +215,7 @@ body {
 
 .hero-banner h1 {
     color: white;
-    font-size: 3rem;
+    font-size: 2rem;
     text-transform: uppercase;
     letter-spacing: 4px;
     margin: 0;
@@ -142,7 +225,7 @@ body {
 
 /* --- 2. TABLE SECTION --- */
 .container {
-    max-width: 1500px;
+    max-width: 1000px;
     margin: 50px auto;
     padding: 0 20px;
 }
@@ -171,12 +254,14 @@ th {
     padding: 20px;
     font-weight: 600;
     text-transform: uppercase;
-    font-size: 0.85rem;
+    font-size: 0.65rem;
     letter-spacing: 1px;
 }
 
 /* Cell Styling */
 td {
+    font-size: 0.6rem;
+    font-weight: 600;
     padding: 20px;
     border-bottom: 1px solid var(--border-color);
     vertical-align: middle;
@@ -207,8 +292,8 @@ tr:last-child td {
 .status {
     padding: 4px 10px;
     border-radius: 20px;
-    font-size: 0.8rem;
-    font-weight: bold;
+    font-size: 0.6rem;
+    font-weight:600;
 }
 
 .published {

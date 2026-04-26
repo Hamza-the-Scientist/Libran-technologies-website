@@ -4,37 +4,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Premium Digital Portfolio</title>
+    <title>Document</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="Style.css">
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+    <!-- nav bar responsive -->
+
     <nav>
-        <div class="logo"><img src="/pics/Logo.png" width="60px" alt=""><span class="cam-name">Libran Technologies <div
-                    class="pvt">(PVT) limited</div> </span></div>
+        <div class="logo">
+            <img src="/pics/Logo.png" width="60px" alt="">
+            <span class="cam-name">Libran Technologies <div class="pvt">(PVT) limited</div></span>
+        </div>
+
+        <input type="checkbox" id="click">
+        <label for="click" class="menu-btn">
+            <span></span>
+            <span></span>
+            <span></span>
+        </label>
+
         <ul class="nav-links">
             <li><a href="index.html">Home</a></li>
             <li><a href="team.html">Team</a></li>
             <li><a href="product.html">Product</a></li>
             <li><a href="patent.html">Publication and patents</a></li>
-            <li><a href="#about">Commercialization and Technology transfer </a></li>
+            <li><a href="#about">Commercialization and Tech transfer</a></li>
             <li><a href="#about">News & Events</a></li>
             <li><a href="contact.html">Contact us</a></li>
         </ul>
     </nav>
 
-    // slider
-
-
+    <!-- slider start here  -->
 
     <section class="slider-section">
         <div class="slider-wrapper">
             <div class="slider-container" id="slider">
                 <div class="slide">
-                    <img src="pics/image.jpeg"
-                        alt="Landscape 1">
+                    <img src="pics/image.jpeg" alt="Landscape 1">
                 </div>
                 <div class="slide">
                     <img src="https://images.unsplash.com/photo-1501785888041-af3ef285b470?auto=format&fit=crop&w=1200&q=80"
@@ -50,11 +59,6 @@
                 </div>
             </div>
         </div>
-        <!-- 
-            <div class="content-footer">
-                <h1>NEWS & EVENTS</h1>
-                <p>A seamless exploration of the world's most quiet places. This slider automatically transitions every two seconds to keep your journey moving.</p>
-        </div> -->
     </section>
 
     <script>
@@ -93,14 +97,15 @@
     </script>
     </div>
 
+    <!-- hero section start -->
+
     <section id="home" class="hero">
-        <h5></h5>
-        <h1>LIBRAN <span>TECHNOLOGIES</span> PVT.LTD</h1>
-        <a href="#projects" class="cta-btn">INNNOVATION ENGINEERED FOR TOMMORROW</a>
-        <div class="speration"></div>
+        <div class="hero-content">
+            <h1>LIBRAN <span>TECHNOLOGIES</span><br>PVT.LTD</h1>
+            <a href="#projects" class="cta-btn">INNOVATION ENGINEERED FOR TOMORROW</a>
+        </div>
 
         <div class="intro">
-            <!-- <span>WHO WE ARE</span> -->
             <p>
                 Libran Technologies is an innovative and intellectual property development company dedicated to
                 converting
@@ -118,42 +123,31 @@
         </div>
     </section>
 
-    <section class="mv-container">
-        <div class="mv-item mission">
-            <h2>Mission</h2>
-            <p>The mission of Libran Technologies is to identify critical laboratory challenges, develop novel and
-                patentable technological solutions, protect these innovations through strong intellectual property, and
-                transfer them to laboratory technology companies and research institutions worldwide.</p>
-        </div>
+    <!-- mission and vission -->
 
-        <div class="mv-item vision">
-            <h2>Vision</h2>
-            <p>To become a globally recognized laboratory innovation company that transforms scientific challenges into
-                breakthrough technologies, advancing research efficiency, safety, and discovery across laboratories
-                worldwide.</p>
+    <section class="mv-section">
+        <div class="mv-container">
+            <div class="mv-item mission">
+                <h2>Mission</h2>
+                <div class="line-accent"></div>
+                <p>The mission of Libran Technologies is to identify critical laboratory challenges, develop novel and
+                    patentable technological solutions, protect these innovations through strong intellectual property,
+                    and
+                    transfer them to laboratory technology companies and research institutions worldwide.</p>
+            </div>
+
+            <div class="mv-item vision">
+                <h2>Vision</h2>
+                <div class="line-accent"></div>
+                <p>To become a globally recognized laboratory innovation company that transforms scientific challenges
+                    into
+                    breakthrough technologies, advancing research efficiency, safety, and discovery across laboratories
+                    worldwide.</p>
+            </div>
         </div>
     </section>
 
-
-    <!-- <section id="projects" class="section">
-        <h2 class="section-title">PROJECTS</h2>
-        <div class="project-grid">
-            <a href="project-details-1.html" class="project-card">
-                <div class="project-img"><img width="800px" src="pic.png" alt=""></div>
-                <div class="project-info">
-                    <h3>Cyber Ledger App</h3>
-                    <p>Financial technology platform for next-gen assets.</p>
-                </div>
-            </a>
-            <a href="project-details-2.html" class="project-card">
-                <div class="project-img">IMAGE PLACEHOLDER (600x400)</div>
-                <div class="project-info">
-                    <h3>Aether UI Kit</h3>
-                    <p>A glassmorphic design system for enterprise dashboards.</p>
-                </div>
-            </a>
-        </div>
-    </section> -->
+    <!-- innovation CYCLE -->
 
     <section id="about" class="section">
         <h2 class="section-title">INNOVATION CYCLE</h2>
@@ -163,56 +157,43 @@
                     At Libran Technologies, we follow a structured, research-driven approach to transform laboratory
                     challenges into globally impactful innovations.
                 </p>
-                <p>
-                    <b> 1. Identify Challenges</b>
-                    We begin by recognizing real problems within laboratories.
-                    Our team actively explores research environments to uncover inefficiencies, limitations, and unmet
-                    needs that require innovative solutions.<br><br>
-                    <b>2. Develop Technologies</b>
-                    Once a challenge is identified, we design and develop novel, patentable technologies.
-                    Our focus is on creating unique, practical, and scientifically robust solutions that address
-                    real-world laboratory problems.<br><br>
-                    <b>3. Secure Patents</b>
-                    We protect our innovations through strong intellectual property strategies.
-                    Each solution is carefully documented and filed to ensure legal protection and long-term value. <br><br>
-                    <b>4. Commercialize</b>
-                    Finally, we transfer our technologies to laboratory equipment companies and research institutions.
-                    Through licensing and partnerships, we ensure our innovations reach the global scientific community.
-                </p>
 
+                <div class="step">
+                    <b>1. Identify Challenges</b>
+                    <p>We begin by recognizing real problems within laboratories. Our team actively explores research
+                        environments to uncover inefficiencies and unmet needs.</p>
+                </div>
+
+                <div class="step">
+                    <b>2. Develop Technologies</b>
+                    <p>Once a challenge is identified, we design and develop novel, patentable technologies focusing on
+                        practical and scientifically robust solutions.</p>
+                </div>
+
+                <div class="step">
+                    <b>3. Secure Patents</b>
+                    <p>We protect our innovations through strong intellectual property strategies, ensuring legal
+                        protection and long-term value.</p>
+                </div>
+
+                <div class="step">
+                    <b>4. Commercialize</b>
+                    <p>Finally, we transfer our technologies to laboratory equipment companies through licensing and
+                        partnerships.</p>
+                </div>
             </div>
-            <div
-                style=" height: 510px; display: flex; align-items: center; justify-content: center; color: var(--gold); opacity: 1;">
-                <img width="500px" src="pics/innovation_cycle.png" alt="CYCLE">
+
+            <div class="about-image">
+                <img src="pics/innovation_cycle.png" alt="Innovation Cycle Diagram">
             </div>
         </div>
     </section>
 
-   
     <footer>
         <p>&copy; 2026 LIBRAN TECHNOLOGIES (PVT) LTD. All Rights Reserved.</p>
     </footer>
 
-    <script>
-        // Simple Scroll Animation Effect
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                const sectionTop = section.getBoundingClientRect().top;
-                if (sectionTop < window.innerHeight - 100) {
-                    section.style.opacity = '1';
-                    section.style.transform = 'translateY(0)';
-                }
-            });
-        });
 
-        // Initialize sections
-        document.querySelectorAll('.section').forEach(s => {
-            s.style.opacity = '0';
-            s.style.transform = 'translateY(30px)';
-            s.style.transition = 'all 0.8s ease-out';
-        });
-    </script>
 </body>
 
 </html>

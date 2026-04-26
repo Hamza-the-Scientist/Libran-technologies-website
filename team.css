@@ -1,12 +1,9 @@
-
-
-
-*{
+* {
     margin: 0;
     padding: 0;
 }
 
-body{
+body {
     background-color: black;
 }
 
@@ -62,7 +59,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 8%;
+    padding: 10px 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -73,7 +70,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--gold);
@@ -88,7 +85,7 @@ nav {
 }
 
 .pvt {
-    font-size: 15px;
+    font-size: 0.7rem;
 }
 
 .nav-links {
@@ -100,7 +97,7 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
     /* letter-spacing: 1px; */
@@ -111,17 +108,102 @@ nav {
     color: var(--gold);
     text-shadow: 0 0 10px var(--gold);
 }
+
+/* --- EXISTING STYLES REMAIN SAME UNTIL HERE --- */
+
+/* Hide the checkbox */
+#click {
+    display: none;
+}
+
+/* Styles for the Hamburger Icon */
+.menu-btn {
+    display: none;
+    /* Hidden on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERY FOR MOBILE (Responsive) --- */
+@media (max-width: 1024px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    .menu-btn {
+        display: flex;
+        /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        /* Adjust based on nav height */
+        left: -100%;
+        /* Hide off-screen by default */
+        background: white;
+        height: calc(100vh - 80px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* SHOW MENU WHEN CHECKBOX IS CHECKED */
+    #click:checked~.nav-links {
+        left: 0;
+    }
+
+    /* Transform hamburger to 'X' when clicked */
+    #click:checked~.menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #click:checked~.menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #click:checked~.menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+}
+
+
 /* NAV END */
 
 
-h2{
+h2 {
     color: white;
 }
 
 .hero {
-    margin-top: 100px;
+    margin-top: 80px;
     width: 100%;
-    height: 400px;
+    height: 250px;
     position: relative;
     overflow: hidden;
 }
@@ -148,7 +230,7 @@ h2{
 }
 
 .hero-overlay h1 {
-    font-size: 3.5rem;
+    font-size: 2rem;
     margin: 0;
     letter-spacing: 2px;
     text-transform: uppercase;
@@ -162,7 +244,7 @@ h2{
 
 .section-header h2 {
     color: white;
-    font-size: 2.2rem;
+    font-size: 1.4rem;
     margin-bottom: 10px;
     position: relative;
     display: inline-block;
@@ -172,7 +254,7 @@ h2{
     content: '';
     width: 50px;
     height: 3px;
-    background:white;
+    background: white;
     position: absolute;
     bottom: -10px;
     left: 50%;
@@ -186,14 +268,14 @@ h2{
 
 /* --- GRID SYSTEM --- */
 .container {
-    max-width: 1200px;
+    max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
 }
 
 .team-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
     gap: 30px;
     margin-bottom: 50px;
 }
@@ -218,7 +300,7 @@ h2{
 
 .member-img {
     width: 100%;
-    height: 300px;
+    height: 200px;
     overflow: hidden;
 }
 
@@ -240,14 +322,14 @@ h2{
 
 .member-info h3 {
     margin: 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     color: black
 }
 
 .member-info p {
     margin: 8px 0 0;
     color: black;
-    font-size: 0.95rem;
+    font-size: 0.7rem;
 }
 
 /* --- STAFF AUTO-SLIDER --- */
@@ -273,7 +355,7 @@ h2{
 }
 
 .slider-track .member-card {
-    flex: 0 0 280px;
+    flex: 0 0 220px;
     scroll-snap-align: center;
 }
 
@@ -290,25 +372,10 @@ h2{
     .member-img {
         height: 250px;
     }
-}
 
-
-
-/* Responsive */
-@media (max-width: 768px) {
-
-    .project-grid,
-    .about-content {
-        grid-template-columns: 1fr;
+    .team-grid {
+        padding: 12px;
     }
 
-    .hero h1 {
-        font-size: 3rem;
-    }
 
-    .nav-links {
-        display: none;
-    }
-
-    /* Mobile Menu would go here */
 }

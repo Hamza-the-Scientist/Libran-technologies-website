@@ -49,7 +49,7 @@ nav {
     position: fixed;
     top: 0;
     width: 100%;
-    padding: 20px 8%;
+    padding: 10px 3%;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -60,7 +60,7 @@ nav {
 }
 
 .logo {
-    font-size: 1.3rem;
+    font-size: 1.2rem;
     font-weight: 700;
     letter-spacing: 2px;
     color: var(--gold);
@@ -75,7 +75,7 @@ nav {
 }
 
 .pvt {
-    font-size: 15px;
+    font-size: 0.7rem;
 }
 
 .nav-links {
@@ -87,7 +87,7 @@ nav {
 .nav-links a {
     text-decoration: none;
     color: rgb(0, 0, 0);
-    font-size: 0.9rem;
+    font-size: 0.6rem;
     font-weight: 600;
     text-transform: uppercase;
     /* letter-spacing: 1px; */
@@ -99,139 +99,238 @@ nav {
     text-shadow: 0 0 10px var(--gold);
 }
 
+/* --- EXISTING STYLES REMAIN SAME UNTIL HERE --- */
+
+/* Hide the checkbox */
+#click {
+    display: none;
+}
+
+/* Styles for the Hamburger Icon */
+.menu-btn {
+    display: none;
+    /* Hidden on desktop */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.menu-btn span {
+    display: block;
+    height: 3px;
+    width: 25px;
+    background: black;
+    border-radius: 3px;
+    transition: all 0.3s ease;
+}
+
+/* --- MEDIA QUERY FOR MOBILE (Responsive) --- */
+@media (max-width: 1024px) {
+    nav {
+        padding: 15px 5%;
+    }
+
+    .menu-btn {
+        display: flex;
+        /* Show hamburger on mobile */
+    }
+
+    .nav-links {
+        position: fixed;
+        top: 80px;
+        /* Adjust based on nav height */
+        left: -100%;
+        /* Hide off-screen by default */
+        background: white;
+        height: calc(100vh - 80px);
+        width: 100%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding-top: 50px;
+        transition: all 0.4s ease;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+    }
+
+    /* SHOW MENU WHEN CHECKBOX IS CHECKED */
+    #click:checked~.nav-links {
+        left: 0;
+    }
+
+    /* Transform hamburger to 'X' when clicked */
+    #click:checked~.menu-btn span:nth-child(1) {
+        transform: rotate(45deg) translate(5px, 5px);
+    }
+
+    #click:checked~.menu-btn span:nth-child(2) {
+        opacity: 0;
+    }
+
+    #click:checked~.menu-btn span:nth-child(3) {
+        transform: rotate(-45deg) translate(7px, -6px);
+    }
+
+    .nav-links li {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-links a {
+        display: block;
+        padding: 15px;
+        font-size: 1.1rem;
+    }
+}
+
+
 :root {
-            --primary-color: #ffffff;
-            --accent-color: #0984e3;
-            --text-gray: #cdcdcd;
-            --bg-soft: #000000;
-        }
+    --primary-color: #ffffff;
+    --accent-color: #0984e3;
+    --text-gray: #cdcdcd;
+    --bg-soft: #000000;
+}
 
-        body {
-            margin: 0;
-            /* font-family: 'Inter', -apple-system, sans-serif; */
-            background-color: var(--bg-soft);
-            color: var(--primary-color);
-            line-height: 1.6;
-        }
+body {
+    margin: 0;
+    /* font-family: 'Inter', -apple-system, sans-serif; */
+    background-color: var(--bg-soft);
+    color: var(--primary-color);
+    line-height: 1.6;
+}
 
-        /* --- 1. TOP BANNER IMAGE --- */
-        .page-banner {
-            margin-top: 100px;
-            width: 100%;
-            height: 350px;
-            overflow: hidden;
-            position: relative;
-        }
+/* --- 1. TOP BANNER IMAGE --- */
+.page-banner {
+    margin-top: 70px;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    position: relative;
+}
 
-        .page-banner img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
+.page-banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
 
-        .banner-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.406);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
+.banner-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.406);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-        .banner-overlay h1 {
-            color: white;
-            font-size: 3rem;
-            text-transform: uppercase;
-            letter-spacing: 3px;
-            margin: 0;
-        }
+.banner-overlay h1 {
+    color: white;
+    font-size: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin: 0;
+}
 
-        /* --- 2. PRODUCT SECTION CONTAINER --- */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 60px 20px;
-        }
+/* --- 2. PRODUCT SECTION CONTAINER --- */
+.container {
+    max-width: 70vw;
+    margin: 0 auto;
+    padding: 60px 20px;
+}
 
-        /* --- 3. THE PRODUCT ROW (Reusable) --- */
-        .product-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 50px;
-            margin-bottom: 100px; /* Space between different products */
-        }
+/* --- 3. THE PRODUCT ROW (Reusable) --- */
+.product-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    margin-bottom: 100px;
+    /* Space between different products */
+}
 
-        /* Alternate product layout (Optional: flips image/text) */
-        .product-row:nth-child(even) {
-            flex-direction: row-reverse;
-        }
+/* Alternate product layout (Optional: flips image/text) */
+.product-row:nth-child(even) {
+    flex-direction: row-reverse;
+}
 
-        /* Left Side: Description */
-        .product-description {
-            flex: 1;
-        }
+/* Left Side: Description */
+.product-description {
+    flex: 1;
+}
 
-        .product-description h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary-color);
-        }
+.product-description h2 {
+    font-size: 2rem;
+    margin-bottom: 20px;
+    color: var(--primary-color);
+}
 
-        .product-description p {
-            font-size: 1.1rem;
-            color: var(--text-gray);
-            margin-bottom: 30px;
-            text-align: justify; /* As per your previous preference */
-        }
+.product-description p {
+    font-size: .8rem;
+    color: var(--text-gray);
+    margin-bottom: 30px;
+    text-align: justify;
+    /* As per your previous preference */
+}
 
-        .btn-shop {
-            display: inline-block;
-            padding: 12px 35px;
-            background-color: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            font-weight: 600;
-            transition: 0.3s;
-        }
+.btn-shop {
+    display: inline-block;
+    padding: 12px 35px;
+    background-color: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: 0.3s;
+    font-size: .6rem;
+}
 
-        .btn-shop:hover {
-            background-color: #0773c5;
-            transform: translateY(-2px);
-        }
+.btn-shop:hover {
+    background-color: #0773c5;
+    transform: translateY(-2px);
+}
 
-        /* Right Side: Big Image */
-        .product-image {
-            flex: 1;
-            position: relative;
-        }
+/* Right Side: Big Image */
+.product-image {
+    flex: 1;
+    position: relative;
+}
 
-        .product-image img {
-            width: 100%;
-            border-radius: 20px;
-            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
-            transition: transform 0.5s ease;
-        }
+.product-image img {
+    width: 100%;
+    border-radius: 20px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    transition: transform 0.5s ease;
+}
 
-        .product-image:hover img {
-            transform: scale(1.02);
-        }
+.product-image:hover img {
+    transform: scale(1.02);
+}
 
-        /* --- 4. RESPONSIVE DESIGN --- */
-        @media (max-width: 900px) {
-            .product-row, .product-row:nth-child(even) {
-                flex-direction: column-reverse; /* Image on top of text for mobile */
-                text-align: center;
-            }
+/* --- 4. RESPONSIVE DESIGN --- */
+@media (max-width: 900px) {
 
-            .page-banner { height: 250px; }
-            .banner-overlay h1 { font-size: 2rem; }
-            
-            .product-description h2 { font-size: 2rem; }
-            
-            .product-image { width: 100%; }
-        }
+    .product-row,
+    .product-row:nth-child(even) {
+        flex-direction: column-reverse;
+        /* Image on top of text for mobile */
+        text-align: center;
+    }
+
+    .page-banner {
+        height: 250px;
+    }
+
+    .banner-overlay h1 {
+        font-size: 2rem;
+    }
+
+    .product-description h2 {
+        font-size: 2rem;
+    }
+
+    .product-image {
+        width: 100%;
+    }
+}
