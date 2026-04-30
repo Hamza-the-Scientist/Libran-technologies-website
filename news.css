@@ -197,6 +197,7 @@ nav {
 body {
         background-color: #0a0a0a;
         color: #ffffff;
+        /* font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; */
         margin: 0;
         padding: 40px 20px;
         display: flex;
@@ -224,9 +225,9 @@ body {
     .poster-grid {
         display: grid;
         /* This forces exactly 2 columns on desktop */
-        grid-template-columns: repeat(2, 1fr); 
+        grid-template-columns: repeat(1, 1fr); 
         gap: 40px;
-        width: 50vw;
+        width: 25vw;
         max-width: 1200px;
     }
 
@@ -235,6 +236,7 @@ body {
         background-color: #111;
         border: 1px solid #222;
         transition: all 0.3s ease;
+        cursor: pointer;
     }
 
     .poster-item:hover {
@@ -297,3 +299,72 @@ body {
             font-size: 1rem;
         }
     }
+
+
+    
+
+    /* Modal Background Overlay */ 
+    /* pop up text  */
+.modal {
+    display: none; 
+    position: fixed;
+    z-index: 2000; /* Higher than nav */
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.85);
+    backdrop-filter: blur(5px);
+}
+
+/* Modal Box */
+.modal-content {
+    background-color: #111;
+    margin: 15vh auto;
+    padding: 30px;
+    border: 1px solid rgb(64, 64, 64);
+    width: 80%;
+    max-width: 600px;
+    border-radius: 8px;
+    position: relative;
+    color: white;
+    box-shadow: 0 0 20px rgba(42, 36, 13, 0.2);
+    animation: popIn 0.3s ease-out;
+}
+
+.close-btn {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    color: var(--gold);
+    font-size: 30px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.modal-content h2 {
+    color: var(--gold);
+    font-size: 1rem;
+    padding-right: 30px;
+}
+
+.modal-content p {
+    font-size: 0.7rem;
+    line-height: 1.5;
+    color: #ccc;
+}
+
+/* Animation */
+@keyframes popIn {
+    from { transform: scale(0.8); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+/* Responsive Tablet/Mobile */
+@media (max-width: 800px) {
+    .modal-content {
+        width: 90%;
+        margin: 20vh auto;
+        padding: 20px;
+    }
+}

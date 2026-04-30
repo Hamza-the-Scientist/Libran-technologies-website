@@ -215,7 +215,7 @@ nav {
     padding: 25px;
     border-radius: 15px;
     transition: 0.3s;
-    border: 1px solid #222;
+    border: 1px solid #747272;
 }
 
 .card:hover {
@@ -286,7 +286,7 @@ nav {
 #contactForm input, 
 #contactForm textarea {
     background-color: transparent;
-    border: 2px solid #333; /* Dark gray border to start */
+    border: 2px solid #5e5d5d; /* Dark gray border to start */
     border-radius: 0;        /* Sharp corners for modern look */
     padding: 15px;
     color: #ffffff;

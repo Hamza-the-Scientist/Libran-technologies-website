@@ -1,15 +1,15 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>News & Events</title>
     <link rel="stylesheet" href="news.css">
-        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
-        <link rel="icon" href="favicon/favicon.ico">
-
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
 
 </head>
+
 <body>
 
     <nav>
@@ -40,19 +40,12 @@
         <h1>News & Events</h1>
     </header>
 
-    <div class="poster-grid">
-        
-        <div class="poster-item">
-            <div class="image-container">
-                <img src="news/2.jpeg" alt="News Poster 1">
-            </div>
-            <div class="poster-info">
-                <span class="date">April 29, 2026</span>
-                <h3>Files first IP -  Congratulations</h3>
-            </div>
-        </div>
 
-        <div class="poster-item">
+
+    <div class="poster-grid">
+
+        <div class="poster-item"
+            onclick="openModal('NCEAC Scholars Launch Unique Startup Focused on Laboratory Innovation.', 'In a significant development for Pakistan’s scientific and research landscape, scholars from the National Centre of Excellence in Analytical Chemistry (NCEAC), University of Sindh, have launched a pioneering startup dedicated to laboratory innovation and technology development.\n  The startup is centered on transforming conventional research practices by introducing advanced, patent-driven solutions to challenges faced in laboratory environments. By combining expertise in materials science, analytical chemistry, and engineering, the team aims to develop practical technologies that enhance research efficiency and reliability.\n According to the founding members Abbas Aziz, Abdul Majid, and Kissa E Zehra, the initiative follows a structured innovation model that includes identifying laboratory problems, designing novel and patentable solutions, securing intellectual property rights, and transferring these technologies to industrial manufacturers for commercialization.\nExperts believe that such research-driven startups are essential for strengthening the link between academia and industry, ultimately contributing to economic growth and scientific advancement.\n The launch marks a promising step toward positioning young Pakistani researchers as key contributors to global technological innovation. ')">
             <div class="image-container">
                 <img src="news/1.jpeg" alt="News Poster 2">
             </div>
@@ -61,9 +54,57 @@
                 <h3>Launch Innovative Startup</h3>
             </div>
         </div>
-        
 
+        <div id="newsModal" class="modal">
+            <div class="modal-content">
+                <span class="close-btn" onclick="closeModal()">&times;</span>
+                <h2 id="modalTitle"></h2>
+                <hr style="border: 0.5px solid var(--gold); margin: 15px 0;">
+                <p id="modalDescription"></p>
+            </div>
         </div>
 
+
+
+        <!-- <div class="poster-item">
+            <div class="image-container">
+                <img src="news/2.jpeg" alt="News Poster 1">
+            </div>
+            <div class="poster-info">
+                <span class="date">April 29, 2026</span>
+                <h3>Files first IP -  Congratulations</h3>
+            </div>
+        </div> -->
+
+
+
+
+    </div>
+
+    <script>
+        function openModal(title, text) {
+            document.getElementById('modalTitle').innerText = title;
+            document.getElementById('modalDescription').innerText = text;
+            document.getElementById('newsModal').style.display = 'block';
+            // Disable background scrolling
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('newsModal').style.display = 'none';
+            // Enable background scrolling
+            document.body.style.overflow = 'auto';
+        }
+
+        // Close if user clicks outside the box
+        window.onclick = function (event) {
+            let modal = document.getElementById('newsModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+
 </body>
+
 </html>
