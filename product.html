@@ -34,7 +34,7 @@
             <li><a href="team.html">Team</a></li>
             <li><a href="product.html">Product</a></li>
             <li><a href="patent.html">Publication and patents</a></li>
-            <li><a href="#about">Commercialization and Tech transfer</a></li>
+            <li><a href="commercialization.html">Commercialization & Tech Transfer</a></li>
             <li><a href="news.html">News & Events</a></li>
             <li><a href="contact.html">Contact us</a></li>
         </ul>
@@ -48,42 +48,9 @@
         </div>
     </div>
 
-    <div class="container" style="display: none;"> // i hide the data tempoaray
-
-        <div class="product-row">
-            <div class="product-description">
-                <h2>Flask</h2>
-                <p>
-                    Crafted for those who value precision and elegance. Our signature timepiece features a
-                    scratch-resistant sapphire crystal, a genuine leather strap, and an automatic movement that never
-                    requires a battery. Designed to transition seamlessly from the boardroom to a weekend getaway.
-                </p>
-                <a href="#" class="btn-shop">View Details</a>
-            </div>
-
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?auto=format&fit=crop&w=1000&q=80"
-                    alt="Product 1">
-            </div>
-        </div>
-
-        <div class="product-row">
-            <div class="product-description">
-                <h2>isntrument</h2>
-                <p>
-                    Experience sound like never before. With active noise cancellation and a 40-hour battery life, these
-                    headphones are built for the modern traveler. The ergonomic design ensures comfort during long
-                    listening sessions, while the studio-grade drivers provide deep bass and crisp highs.
-                </p>
-                <a href="#" class="btn-shop">View Details</a>
-            </div>
-
-            <div class="product-image">
-                <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=1000&q=80"
-                    alt="Product 2">
-            </div>
-        </div>
-
+    <!-- Removed style="display: none;" and added ID for dynamic loading -->
+    <div class="container" id="products-container">
+        <!-- Dynamic content will be injected here -->
     </div>
 
     <footer class="site-footer">
@@ -98,10 +65,14 @@
             <div class="footer-socials">
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">X (Twitter)</a>
+
             </div>
 
         </div>
     </footer>
+
+    <script src="data-manager.js"></script>
+    <script src="content-loader.js"></script>
 
 </body>
 

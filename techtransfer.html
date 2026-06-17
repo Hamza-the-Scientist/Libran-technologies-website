@@ -1,18 +1,47 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Patents & Publications</title>
+    <title>Tech Transfer — Libran Technologies</title>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;600;900&display=swap" rel="stylesheet">
-
     <link rel="stylesheet" href="patent.css">
     <link rel="icon" href="favicon/favicon.ico">
-
+    <style>
+        .coming-soon-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            min-height: 50vh;
+            text-align: center;
+            padding: 60px 20px;
+        }
+        .coming-soon-container h2 {
+            font-size: 2rem;
+            color: #ffffff;
+            margin-bottom: 15px;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+        }
+        .coming-soon-container .gold-line {
+            width: 80px;
+            height: 3px;
+            background: #D4AF37;
+            margin-bottom: 25px;
+        }
+        .coming-soon-container p {
+            color: #888;
+            font-size: 0.9rem;
+            max-width: 500px;
+            line-height: 1.8;
+        }
+    </style>
 </head>
-<body>
-<!-- nav bar responsive -->
 
+<body>
+    <!-- nav bar responsive -->
     <nav>
         <div class="logo">
             <img src="pics/Logo.png" width="60px" alt="">
@@ -38,48 +67,29 @@
     </nav>
 
     <header class="hero-banner">
-        <h1>Patents & Publications</h1>
-        
+        <h1>Tech Transfer</h1>
     </header>
 
-    <main class="container">
-        <div class="table-wrapper">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Title</th>
-                        <th>Publication Type</th>
-                        <th>Status</th>
-                        <th>Link</th>
-                    </tr>
-                </thead>
-                <tbody id="publications-body"> 
-                    <!-- Dynamic content will be injected here -->
-                </tbody>
-            </table>
-        </div>
-    </main>
+    <div class="coming-soon-container">
+        <h2>Coming Soon</h2>
+        <div class="gold-line"></div>
+        <p>This section is under development. We are working on bringing you detailed information about our technology transfer initiatives.</p>
+    </div>
 
     <footer class="site-footer">
         <div class="footer-container">
-
             <div class="footer-info">
                 <p><strong>Address:</strong> B/961 Shahi Bazar Tando Jam 70050, District Hyderabad, Sindh-Pakistan</p>
                 <p><strong>Cell:</strong> +92 309 977 0555</p>
                 <p><strong>Email:</strong> <a href="">LibranTeachnologies@example.com</a></p>
             </div>
-
             <div class="footer-socials">
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">X (Twitter)</a>
 
             </div>
-
         </div>
     </footer>
-
-    <script src="data-manager.js"></script>
-    <script src="content-loader.js"></script>
 
 </body>
 </html>

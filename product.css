@@ -318,6 +318,11 @@ body {
         text-align: center;
     }
 
+    .container {
+        max-width: 100%;
+        padding: 40px 15px;
+    }
+
     .page-banner {
         height: 250px;
     }

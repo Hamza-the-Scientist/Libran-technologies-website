@@ -34,7 +34,7 @@
             <li><a href="team.html">Team</a></li>
             <li><a href="product.html">Product</a></li>
             <li><a href="patent.html">Publication and patents</a></li>
-            <li><a href="#about">Commercialization and Tech transfer</a></li>
+            <li><a href="commercialization.html">Commercialization & Tech Transfer</a></li>
             <li><a href="news.html">News & Events</a></li>
             <li><a href="contact.html">Contact us</a></li>
         </ul>
@@ -62,51 +62,53 @@
     </section>
 
     <script>
-        const slider = document.getElementById('slider');
-        let isPaused = false;
+        // Slider auto-scroll — runs after content-loader.js rebuilds slides
+        function initSliderAutoScroll() {
+            const slider = document.getElementById('slider');
+            if (!slider) return;
+            let isPaused = false;
 
-        // Function to move to the next slide
-        function nextSlide() {
-            if (isPaused) return;
+            function nextSlide() {
+                if (isPaused) return;
+                const slideEl = slider.querySelector('.slide');
+                if (!slideEl) return;
+                const slideWidth = slideEl.clientWidth;
+                const gap = 20;
+                const totalWidth = slideWidth + gap;
 
-            const slideWidth = slider.querySelector('.slide').clientWidth;
-            const gap = 20; // Must match --slide-gap in CSS
-            const totalWidth = slideWidth + gap;
-
-            // Check if we are at the end
-            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
-                // Return to start
-                slider.scrollTo({ left: 0, behavior: 'smooth' });
-            } else {
-                // Move forward
-                slider.scrollBy({ left: totalWidth, behavior: 'smooth' });
+                if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+                    slider.scrollTo({ left: 0, behavior: 'smooth' });
+                } else {
+                    slider.scrollBy({ left: totalWidth, behavior: 'smooth' });
+                }
             }
+
+            setInterval(nextSlide, 2000);
+
+            slider.addEventListener('mouseenter', () => isPaused = true);
+            slider.addEventListener('mouseleave', () => isPaused = false);
+            slider.addEventListener('touchstart', () => isPaused = true);
+            slider.addEventListener('touchend', () => {
+                setTimeout(() => { isPaused = false; }, 1000);
+            });
         }
 
-        // Initialize Auto Scroller (2000ms = 2 seconds)
-        let autoCycle = setInterval(nextSlide, 2000);
-
-        // Interaction Listeners: Pause when user interacts
-        slider.addEventListener('mouseenter', () => isPaused = true);
-        slider.addEventListener('mouseleave', () => isPaused = false);
-        slider.addEventListener('touchstart', () => isPaused = true);
-        slider.addEventListener('touchend', () => {
-            // Short delay after touch before resuming
-            setTimeout(() => { isPaused = false; }, 1000); // timer
+        // Initialize after DOM and content-loader finish
+        document.addEventListener('DOMContentLoaded', function () {
+            setTimeout(initSliderAutoScroll, 200);
         });
     </script>
-    </div>
 
     <!-- hero section start -->
 
     <section id="home" class="hero">
         <div class="hero-content">
-            <h1>LIBRAN <span>TECHNOLOGIES</span><br>PVT.LTD</h1>
-            <a href="#projects" class="cta-btn">INNOVATION ENGINEERED FOR TOMORROW</a>
+            <h1 id="hero-heading">LIBRAN <span>TECHNOLOGIES</span><br>PVT.LTD</h1>
+            <a href="#projects" class="cta-btn" id="hero-tagline">INNOVATION ENGINEERED FOR TOMORROW</a>
         </div>
 
         <div class="intro">
-            <p>
+            <p id="hero-intro">
                 Libran Technologies is an innovative and intellectual property development company dedicated to
                 converting
                 laboratory challenges into commercially valuable technological solutions. Built on a strong foundation
@@ -220,6 +222,7 @@
             <div class="footer-socials">
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">X (Twitter)</a>
+
             </div>
 
         </div>
@@ -229,6 +232,8 @@
         <p>&copy; 2026 LIBRAN TECHNOLOGIES (PVT) LTD. All Rights Reserved.</p>
     </footer>
 
+    <script src="data-manager.js"></script>
+    <script src="content-loader.js"></script>
 
 </body>
 
