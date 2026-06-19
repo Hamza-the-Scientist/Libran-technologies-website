@@ -6,6 +6,11 @@
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html {
+    zoom: 0.9;
+    /* Scales down the entire layout */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -142,7 +147,7 @@ nav {
         left: -100%;
         /* Hide off-screen by default */
         background: white;
-        height: calc(100vh - 80px);
+        height: calc(120vh - 90px);
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -177,11 +182,10 @@ nav {
 
     .nav-links a {
         display: block;
-        padding: 15px;
-        font-size: 1.1rem;
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
-
 
 :root {
     --primary-dark: #2c3e50;
@@ -293,7 +297,7 @@ tr:last-child td {
     padding: 4px 10px;
     border-radius: 20px;
     font-size: 0.6rem;
-    font-weight:600;
+    font-weight: 600;
 }
 
 .published {
@@ -398,7 +402,7 @@ tr:last-child td {
     gap: 15px;
 }
 
-.footer-socials a{
+.footer-socials a {
     font-size: 8px;
 }
 

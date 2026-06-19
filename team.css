@@ -7,6 +7,11 @@ body {
     background-color: black;
 }
 
+html {
+    zoom: 0.9;
+    /* Scales down the entire layout */
+}
+
 /* //nav bar */
 :root {
     --gold: #D4AF37;
@@ -152,7 +157,7 @@ nav {
         left: -100%;
         /* Hide off-screen by default */
         background: white;
-        height: calc(100vh - 80px);
+        height: calc(120vh - 90px);
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -187,8 +192,8 @@ nav {
 
     .nav-links a {
         display: block;
-        padding: 15px;
-        font-size: 1.1rem;
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
 

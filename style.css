@@ -6,6 +6,11 @@
     --transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+html {
+    zoom: 0.9;
+    /* Scales down the entire layout */
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -135,6 +140,16 @@ nav {
     }
 }
 
+@media (max-width: 600px) {
+    .logo {
+        font-size: 1.3rem;
+    }
+
+    .pvt {
+        font-size: 0.6rem;
+    }
+}
+
 /* --- MEDIA QUERY FOR MOBILE (Responsive) --- */
 @media (max-width: 1024px) {
     nav {
@@ -153,7 +168,7 @@ nav {
         left: -100%;
         /* Hide off-screen by default */
         background: white;
-        height: calc(100vh - 80px);
+        height: calc(120vh - 90px);
         width: 100%;
         flex-direction: column;
         align-items: center;
@@ -188,8 +203,8 @@ nav {
 
     .nav-links a {
         display: block;
-        padding: 15px;
-        font-size: 1.1rem;
+        padding: 10px;
+        font-size: 0.9rem;
     }
 }
 
@@ -262,14 +277,14 @@ nav {
 /* Responsive Breakpoints */
 @media (max-width: 1024px) {
     :root {
-        --slider-height: 50vh;
+        --slider-height: 30vh;
         /* Smaller height for tablets */
     }
 }
 
 @media (max-width: 768px) {
     :root {
-        --slider-height: 40vh;
+        --slider-height: 20vh;
         /* Smaller height for mobile phones */
     }
 
@@ -362,7 +377,7 @@ nav {
     }
 
     .hero h1 {
-        font-size: 2rem;
+        font-size: 1.2rem;
     }
 
     .hero h1 span {
@@ -373,9 +388,9 @@ nav {
     }
 
     .cta-btn {
-        width: 70%;
-        padding: 12px 20px;
-        font-size: 0.6rem;
+        width: auto;
+        padding: 8px 12px;
+        font-size: 0.4rem;
     }
 
 }
@@ -474,7 +489,7 @@ nav {
     }
 
     .mv-item h2 {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }
 
@@ -574,11 +589,11 @@ nav {
 
 @media (max-width: 768px) {
     .section {
-        padding: 60px 5%;
+        padding: 20px 5%;
     }
 
     .section-title {
-        font-size: 1.5rem;
+        font-size: 1rem;
     }
 }
 
