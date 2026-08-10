@@ -665,7 +665,7 @@ nav {
 
 /* our partner */
 .partners-section {
-    display: none;
+    /* display: none; */
     padding: 60px 20px;
     background-color: #191919;
     text-align: center;
