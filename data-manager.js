@@ -148,7 +148,7 @@ const DataManager = (function () {
             id: 'p1',
             title: 'Industrial Design of temperature based jacket',
             type: 'Design/Utility Patent',
-            status: 'Pending',
+            status: 'Hide',
             pdfUrl: '#',
             pdfName: '',
             description: '',
