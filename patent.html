@@ -31,7 +31,7 @@
             <li><a href="team.html">Team</a></li>
             <li><a href="product.html">Product</a></li>
             <li><a href="patent.html">Publication and patents</a></li>
-            <li><a href="commercialization.html">Commercialization & Tech Transfer</a></li>
+            <li><a href="#about">Commercialization and Tech transfer</a></li>
             <li><a href="news.html">News & Events</a></li>
             <li><a href="contact.html">Contact us</a></li>
         </ul>
@@ -53,8 +53,15 @@
                         <th>Link</th>
                     </tr>
                 </thead>
-                <tbody id="publications-body"> 
-                    <!-- Dynamic content will be injected here -->
+                <tbody> 
+                    <!-- hide the data temparary -->
+                    <tr>
+                        <td data-label="Title"></td>
+                        <td data-label="Type"></td>
+                        <td data-label="Status"><span class="status pending"></span></td>
+                        <!-- <td data-label="Link"><a href="#" class="link-btn">downlaod PDF</a></td> -->
+                    </tr>
+                   
                 </tbody>
             </table>
         </div>
@@ -72,14 +79,10 @@
             <div class="footer-socials">
                 <a href="#" class="social-link">LinkedIn</a>
                 <a href="#" class="social-link">X (Twitter)</a>
-
             </div>
 
         </div>
     </footer>
-
-    <script src="data-manager.js"></script>
-    <script src="content-loader.js"></script>
 
 </body>
 </html>
