@@ -77,6 +77,7 @@ th {
 td {
     font-size: 0.6rem;
     font-weight: 600;
+    color:black;
     padding: 20px;
     border-bottom: 1px solid var(--border-color);
     vertical-align: middle;
