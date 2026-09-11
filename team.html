@@ -114,18 +114,72 @@
                 <p>CHIEF TECHNOLOGY OFFICER(CTO)</p>
                 </div>
             </a>
-            <a href="https://linkedin.com" class="member-card">
-                <div class="member-img"><img src="pics/vinod.jpeg" alt="Name"></div>
-                <div class="member-info">
-                    <h3>VINOD KUMAR</h3>
-                    <p>TRAINEE</p>
-                </div>
-            </a>
+
             
         </div>
     </section>
     
-    <section class="container">
+    <section>
+    <div class="section-header">
+        <h2>Trainee</h2>
+    </div>
+
+    <div class="staff-slider-container">
+        <div class="slider-track" id="staffSlider">
+            <a href="https://linkedin.com" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/vinod.jpeg" alt="VINOD KUMAR"></div>
+                <div class="member-info">
+                    <h3>VINOD KUMAR</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>        
+            <a href="https://www.linkedin.com/in/abdul-majid-memon-026797270/" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/eman.jpeg" alt="EMMMAN ARSHAD"></div>
+                <div class="member-info">
+                    <h3>EMMMAN ARSHAD</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/pirh.jpeg" alt="PRIH MUQADDISA"></div>
+                <div class="member-info">
+                    <h3>PRIH MUQADDISA</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/talpur.jpeg" alt="HAMZA TALPUR"></div>
+                <div class="member-info">
+                    <h3>HAMZA TALPUR</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/kainat.jpeg" alt="ENGR. KAINAT MUJTABA"></div>
+                <div class="member-info">
+                    <h3>ENGR. KAINAT MUJTABA</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/saliha.jpeg" alt="SALIHA ABDUL REHMAN"></div>
+                <div class="member-info">
+                    <h3>SALIHA ABDUL REHMAN</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>
+            <a href="https://linkedin.com" target="_blank" class="member-card">
+                <div class="member-img"><img src="pics/girl.jpg" alt="SIDRA MURSLEEN"></div>
+                <div class="member-info">
+                    <h3>SIDRA MURSLEEN</h3>
+                    <p>TRAINEE</p>
+                </div>
+            </a>
+        </div>
+    </div>
+</section>
+
+    <!-- <section class="container">
         <div class="section-header">
             <h2>Trainee</h2>
         </div>
@@ -178,7 +232,7 @@
                 </div>
             </a>
         </div>
-    </section>
+    </section> -->
 
 
     <section>
@@ -220,7 +274,7 @@
         <div class="footer-container">
 
             <div class="footer-info">
-                <p><strong>Address:</strong> B/961 Shahi Bazar Tando Jam 70050, District Hyderabad, Sindh-Pakistan</p>
+                <p><strong>Address:</strong> B/961 Tando Jam, Hydera    bad | National Incubation Center, Hyderabad | A-27 Gulshan e Iqbal, Block 10, Karachi</p>
                 <p><strong>Cell:</strong> +92 309 977 0555</p>
                 <p><strong>Email:</strong> <a href="">info.librantechnologies@gmail.com </a></p>
             </div>
@@ -244,9 +298,9 @@
         function autoScrollStaff() {
             if (isPaused) return;
 
-            const cardWidth = slider.querySelector('.member-card').clientWidth + 20;
+            const cardWidth = slider.querySelector('.member-card').clientWidth + 10;
             
-            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 10) {
+            if (slider.scrollLeft + slider.clientWidth >= slider.scrollWidth - 1) {
                 slider.scrollTo({ left: 0, behavior: 'smooth' });
             } else {
                 slider.scrollBy({ left: cardWidth, behavior: 'smooth' });
@@ -254,7 +308,7 @@
         }
 
         // Auto play every 2.5 seconds
-        let timer = setInterval(autoScrollStaff, 2500);
+        let timer = setInterval(autoScrollStaff, 3000);
 
         // Pause on hover
         slider.addEventListener('mouseenter', () => isPaused = true);
