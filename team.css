@@ -142,7 +142,7 @@ h2 {
     width: 100%;
     overflow: hidden;
     padding: 40px 0 80px;
-    background: #000000;
+    /* background: #000000; */
 }
 
 .slider-track {
