@@ -1,0 +1,205 @@
+
+body {
+background-color: #0f1318;
+color: #e6edf3;
+font-family: 'Montserrat', sans-serif;
+margin: 0;
+padding: 0;
+}
+
+/* STREAMING_CHUNK:Styling main layout container and hero header... */
+.careers-container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 40px 20px 80px 20px;
+}
+
+/* HERO SECTION */
+.careers-hero {
+text-align: center;
+padding: 50px 20px 30px 20px;
+border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+margin-bottom: 40px;
+}
+
+.hero-title {
+font-size: 1.6rem;
+font-weight: 900;
+letter-spacing: 2px;
+color: #ffffff;
+margin-bottom: 12px;
+text-transform: uppercase;
+margin-top: 30px;
+}
+
+.hero-subtitle {
+font-size: 0.8rem;
+color: #8b949e;
+font-weight: 300;
+max-width: 600px;
+margin: 0 auto;
+line-height: 1.5;
+}
+
+/* OPENINGS SECTION */
+
+.section-title {
+font-size: 1.3rem;
+font-weight: 700;
+letter-spacing: 1.5px;
+color: #d2a850; /* Golden theme accent */
+margin-bottom: 25px;
+text-transform: uppercase;
+}
+
+/* STREAMING_CHUNK:Styling job opening cards and status badges... */
+/* JOB CARD - Matching Publications Card Container */
+.job-card {
+background: #0d1117; /* Navy blue tint matching site screenshot */
+border: 1px solid rgba(255, 255, 255, 0.1);
+border-radius: 12px;
+padding: 28px;
+margin-bottom: 25px;
+box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+transition: transform 0.2s ease, border-color 0.2s ease;
+}
+
+.job-card:hover {
+transform: translateY(-3px);
+border-color: rgba(210, 168, 80, 0.4);
+}
+
+.job-header {
+display: flex;
+justify-content: space-between;
+align-items: flex-start;
+border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+padding-bottom: 18px;
+margin-bottom: 18px;
+flex-wrap: wrap;
+gap: 12px;
+}
+
+.job-role {
+font-size: 1.4rem;
+font-weight: 700;
+color: #ffffff;
+margin: 0 0 10px 0;
+}
+
+.job-tags {
+display: flex;
+flex-wrap: wrap;
+gap: 8px;
+}
+
+.tag {
+font-size: .75rem;
+padding: 4px 10px;
+border-radius: 20px;
+background: rgba(255, 255, 255, 0.06);
+color: #c9d1d9;
+border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+/* STATUS BADGE - Matching the "pending" amber badge style */
+.status-badge.open {
+background: #ffe8b6;
+color: #8a5300;
+font-size: 0.8rem;
+font-weight: 700;
+padding: 5px 16px;
+border-radius: 20px;
+text-transform: lowercase;
+}
+
+/* STREAMING_CHUNK:Styling card content body and button elements... */
+.job-body {
+color: #c9d1d9;
+font-size: 0.95rem;
+line-height: 1.6;
+}
+
+.job-description {
+margin-bottom: 20px;
+color: #e6edf3;
+}
+
+.job-details h4 {
+font-size: 0.9rem;
+color: #d2a850;
+margin: 15px 0 8px 0;
+text-transform: uppercase;
+letter-spacing: 0.5px;
+}
+
+.job-details ul {
+margin: 0 0 15px 0;
+padding-left: 20px;
+}
+
+.job-details li {
+margin-bottom: 6px;
+font-size: 0.9rem;
+color: #8b949e;
+}
+
+.job-footer {
+margin-top: 25px;
+display: flex;
+justify-content: flex-end;
+}
+
+/* APPLY BUTTON - Matching the download PDF outline button style */
+.apply-btn {
+background: transparent;
+border: 1px solid #d2a850;
+color: #d2a850;
+padding: 10px 24px;
+border-radius: 6px;
+font-size: 0.85rem;
+font-weight: 600;
+cursor: pointer;
+text-transform: uppercase;
+letter-spacing: 1px;
+transition: all 0.2s ease;
+text-decoration: none;
+}
+
+.apply-btn:hover {
+background: #d2a850;
+color: #0d1117;
+box-shadow: 0 0 12px rgba(88, 166, 255, 0.3);
+}
+
+/* STREAMING_CHUNK:Adding responsive design breakpoints for mobile views... /
+/ RESPONSIVE DESIGN */
+@media (max-width: 768px) {
+.careers-hero {
+padding: 30px 10px 20px 10px;
+}
+
+.hero-title {
+    font-size: 1.6rem;
+}
+
+.job-card {
+    padding: 20px;
+}
+
+.job-header {
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.job-footer {
+    justify-content: stretch;
+}
+
+.apply-btn {
+    width: 100%;
+    text-align: center;
+}
+
+
+}
